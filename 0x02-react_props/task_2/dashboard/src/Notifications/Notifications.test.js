@@ -14,9 +14,15 @@ describe("Notification tests", () => {
   it("renders correct list items", () => {
     const wrapper = shallow(<Notifications />);
     expect(wrapper.find("ul").children()).toHaveLength(3);
-    expect(wrapper.find("ul").childAt(0).html()).toEqual('<li data-notification-type="default">New course available</li>');
-    expect(wrapper.find("ul").childAt(1).html()).toEqual('<li data-notification-type="urgent">New resume available</li>');
-    expect(wrapper.find("ul").childAt(2).html()).toEqual(`<li data-urgent=\"true\">${getLatestNotification()}</li>`);
+    expect(wrapper.find("ul").childAt(0).html()).toEqual(
+      '<li data-notification-type="default">New course available</li>',
+    );
+    expect(wrapper.find("ul").childAt(1).html()).toEqual(
+      '<li data-notification-type="urgent">New resume available</li>',
+    );
+    expect(wrapper.find("ul").childAt(2).html()).toEqual(
+      `<li data-urgent=\"true\">${getLatestNotification()}</li>`,
+    );
   });
 
   it("renders an unordered list", () => {
@@ -30,6 +36,8 @@ describe("Notification tests", () => {
   it("renders correct text", () => {
     const component = shallow(<Notifications />);
 
-    expect(component.find("p").prop("children")).toBe("Here is the list of notifications");
+    expect(component.find("p").prop("children")).toBe(
+      "Here is the list of notifications",
+    );
   });
 });

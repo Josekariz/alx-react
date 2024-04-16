@@ -24,6 +24,8 @@ describe("Notification component tests", () => {
   it("renders correct text", () => {
     const notification = shallow(<Notifications />);
 
-    expect(notification.find("p").text()).toBe("Here is the list of notifications");
+    expect(notification.find("p").text()).toBe(
+      "Here is the list of notifications",
+    );
   });
 });
